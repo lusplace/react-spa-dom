@@ -5,7 +5,7 @@ import {Home} from "./pages/Home";
 import {Search} from "./pages/Search";
 import {Movie} from "./pages/Movie";
 
-
+const base_url='/react-spa-dom'
 function App() {
 
     if (!process.env.REACT_APP_TMDB_KEY || !process.env.REACT_APP_TMDB_READ_TOKEN ) {
@@ -13,13 +13,11 @@ function App() {
         throw new Error("Missing API key!");
     }
 
-
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={'/react-spa-dom'}>
             <Navbar/>
             <Routes>
                 <Route exact path="/" element={<Home/>} />
-                <Route exact path="/react-spa-dom" element={<Home/>} />
                 <Route path="/search" element={<Search/>} />
                 <Route path="/movie/:id" element={<Movie/>} />
                 <Route path="*" element={<h1>404 Not Found</h1>} />
