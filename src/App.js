@@ -7,12 +7,12 @@ import {Movie} from "./pages/Movie";
 
 
 function App() {
-/*
-    if (!process.env.REACT_APP_MOVIE_DB_API_KEY || !process.env.REACT_APP_MOVIE_DB_KEY ) {
+
+    if (!process.env.REACT_APP_TMDB_KEY || !process.env.REACT_APP_TMDB_READ_TOKEN ) {
         console.error("Missing API key!");
         throw new Error("Missing API key!");
     }
-*/
+
 
     return (
         <BrowserRouter>

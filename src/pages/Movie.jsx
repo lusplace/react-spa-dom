@@ -4,12 +4,11 @@ import useFetch from "../hooks/useFetch";
 import './Movie.css';
 //TODO require('dotenv').config();
 //TODO console.log(import.meta.env);
-const REACT_APP_MOVIE_DB_API_KEY='258d931d683968f60efdc9c9f405fe4c'
 
 export const Movie = () => {
     //TODO console.log({'import.meta.env': import.meta.env});
-    //const key = import.meta.env.REACT_APP_MOVIE_DB_KEY;
-    const key = REACT_APP_MOVIE_DB_API_KEY;
+    //const key = import.meta.env.REACT_APP_TMDB_READ_TOKEN;
+    const key = process.env.REACT_APP_TMDB_KEY ;
     let { id } = useParams();
 
     const link = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}`;
