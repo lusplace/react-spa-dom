@@ -20,9 +20,6 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
-env:
-  REACT_APP_TMDB_KEY: ${{ vars.REACT_APP_TMDB_KEY }}
-  REACT_APP_TMDB_READ_TOKEN: ${{ vars.REACT_APP_TMDB_READ_TOKEN }}
 
 jobs:
   # Single deploy job since we're just deploying
@@ -43,6 +40,9 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+        env:
+          REACT_APP_APIKey: ${{ secrets.REACT_APP_APIKey }}
+          REACT_APP_APISecret: ${{ secrets.REACT_APP_APISecret }}
       - name: Copy index.html to 404.html
         run: cp ./build/index.html ./build/404.html
       - name: Setup Pages
