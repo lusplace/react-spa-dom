@@ -28,11 +28,9 @@ export const Search = () => {
     const query = searchData ? `&query=${searchData}` : '';
 
     const link = `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1${query}`;
-    console.log(link);
     useMemo(() => fetch(link, options)
         .then(res => res.json())
         .then(res => {
-            console.log(res);
             setMoviesData(res.results);
         })
         .catch(err => console.error(err)), [link]);
@@ -51,7 +49,7 @@ const MovieList = memo(function MovieList({movies}) {
     return (
         <ul className="movieList">
             {movies?.map((movie) => (
-                <li key={movie.popularity}>
+                <li key={movie.title + "" + movie.id}>
                     <Link className='cardLink' to={`/movie/${movie.id}`}>
                     <MovieCard data={movie}/>
                     </Link>
