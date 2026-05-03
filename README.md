@@ -4,11 +4,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Node 24
 To deploy locally as dev:
 
+```
 git clone https://github.com/lusplace/react-spa-dom.git
 cd react-spa-dom
 npm i
 npm run dev
-
+```
 ## Tests
 For time constraints, no tests have been developed yet
 
