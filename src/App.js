@@ -5,7 +5,6 @@ import {Home} from "./pages/Home";
 import {Search} from "./pages/Search";
 import {Movie} from "./pages/Movie";
 
-const base_url='/react-spa-dom'
 function App() {
 
     if (!process.env.REACT_APP_TMDB_KEY || !process.env.REACT_APP_TMDB_READ_TOKEN ) {
