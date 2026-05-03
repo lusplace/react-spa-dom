@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React from "react";
 import { useParams } from "react-router";
 import useFetch from "../hooks/useFetch";
 import './Movie.css';
@@ -13,23 +13,7 @@ export const Movie = () => {
     let { id } = useParams();
 
     const link = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}`;
-    console.log({link: link});
-    const { data: data, loading, error } = useFetch(link);
-    console.log(data)
-    const imgLink = `https://api.themoviedb.org/3/movie/${id}/images?api_key=${key}`;
-
-    const { data: imgData, imgLoading, imgError } = useFetch(imgLink, key);
-
-    console.log({
-        imgData: imgData,
-        imgLinks: imgLink
-    });
-
-    const imgBgData = imgLoading || imgError? null: {
-        link: imgData?.backdrops[0]?.file_path,
-        width: imgData?.backdrops[0]?.width,
-        height: imgData?.backdrops[0]?.height
-    };
+    const { data, loading, error } = useFetch(link);
 
     const content = loading? (<h3>Loading Movie...</h3>):
         error?
@@ -41,7 +25,7 @@ export const Movie = () => {
 
             <div className="container">
                 <div className="card movieCard col-2" style={{width: "18rem"}}>
-                    <img className="card-img-top" src={`https://media.themoviedb.org/t/p/w300_and_h450_face${data?.poster_path}`} alt="Card image cap"/>
+                    <img className="card-img-top" src={`https://media.themoviedb.org/t/p/w300_and_h450_face${data?.poster_path}`} alt="Poster for your movie"/>
                     <div className="card-body">
                         <h5 className="card-title">{data?.title}</h5>
                         <p className="card-text">{data?.tagline}</p>
@@ -63,9 +47,3 @@ export const Movie = () => {
 
     return content;
 };
-
-/*
-<!-- <img className="card-img-top img-bg" src={imgLoading || imgError? "error":
-    `https://media.themoviedb.org/t/p/w${imgData?.width}_and_h${imgData?.height}_face${imgData?.file_path}`}
-          alt="Card image cap"/>
--->*/

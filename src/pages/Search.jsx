@@ -6,23 +6,24 @@ import './Search.css';
 import * as dotenv from 'dotenv';
 */
 const REACT_APP_MOVIE_DB_KEY='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNThkOTMxZDY4Mzk2OGY2MGVmZGM5YzlmNDA1ZmU0YyIsIm5iZiI6MTc3NzU0Njk5OS42OTgsInN1YiI6IjY5ZjMzNmY3NjFkMjU3ZGJlMzg0MmY0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7qw3bS-AqDLysqq7rsQZTTsh6RKUdXwAq-XpCEnrThI'
+const options = {
+    method: 'GET',
+    headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${REACT_APP_MOVIE_DB_KEY}`
+    }
+};
 
 export const Search = () => {
 /*    console.log(process.env)
 
     dotenv.config();*/
     /*const movieLongAPIKey = process.env.REACT_APP_MOVIE_DB_KEY; // DOESNT WORK*/
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const searchData = searchParams.get("query");
     const [moviesData, setMoviesData] = useState([]);
 
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${REACT_APP_MOVIE_DB_KEY}`
-        }
-    };
+
 
     const query = searchData ? `&query=${searchData}` : '';
 
