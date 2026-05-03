@@ -1,0 +1,16 @@
+.movieList{
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+    list-style: none;
+    justify-content: space-between;
+    margin-right: 1rem;
+    max-width: 90%;
+    row-gap: 1em;
+}
+
+.cardLink{
+    text-decoration: none;
+}

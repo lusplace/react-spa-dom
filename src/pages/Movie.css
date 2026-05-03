@@ -1,0 +1,17 @@
+.img-bg{
+    z-index: -1;
+    position: absolute;
+    opacity: 70%;
+    margin: 0;
+    left: 0;
+    min-height: 800px;
+    width: 100%;
+}
+
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    margin: 2em 2em;
+}

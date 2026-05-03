@@ -1,0 +1,15 @@
+.mb-3.input-group{
+
+}
+
+.me-auto{
+    align-items: center !important;
+}
+
+.form-inline{
+    display: flex;
+}
+
+.navbar-brand{
+    margin-left: 3em;
+}
