@@ -5,7 +5,6 @@ import './Movie.css';
 //TODO require('dotenv').config();
 //TODO console.log(import.meta.env);
 const REACT_APP_MOVIE_DB_API_KEY='258d931d683968f60efdc9c9f405fe4c'
-const REACT_APP_MOVIE_DB_KEY='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNThkOTMxZDY4Mzk2OGY2MGVmZGM5YzlmNDA1ZmU0YyIsIm5iZiI6MTc3NzU0Njk5OS42OTgsInN1YiI6IjY5ZjMzNmY3NjFkMjU3ZGJlMzg0MmY0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7qw3bS-AqDLysqq7rsQZTTsh6RKUdXwAq-XpCEnrThI'
 
 export const Movie = () => {
     //TODO console.log({'import.meta.env': import.meta.env});

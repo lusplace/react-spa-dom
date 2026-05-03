@@ -50,7 +50,7 @@ export default function useFetch(url, auth = null) {
             console.log("Limpiando fetch...");
             controller.abort();
         };
-    }, [url]);
+    }, [url, auth]);
 
     return { data, loading, error };
 }

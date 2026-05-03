@@ -10,9 +10,6 @@ export default function NavBar () {
     const handleSubmit = (event) => {
         navigate(`/search?query=${searchQuery}`);
     }
-    function getRandomMovie() {
-        return 10;
-    }
 
     function handleChange(e) {
         setSearchQuery(e.target.value);

@@ -5,7 +5,6 @@ import './Search.css';
 /*
 import * as dotenv from 'dotenv';
 */
-const REACT_APP_MOVIE_DB_API_KEY='258d931d683968f60efdc9c9f405fe4c'
 const REACT_APP_MOVIE_DB_KEY='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNThkOTMxZDY4Mzk2OGY2MGVmZGM5YzlmNDA1ZmU0YyIsIm5iZiI6MTc3NzU0Njk5OS42OTgsInN1YiI6IjY5ZjMzNmY3NjFkMjU3ZGJlMzg0MmY0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7qw3bS-AqDLysqq7rsQZTTsh6RKUdXwAq-XpCEnrThI'
 
 export const Search = () => {
@@ -13,10 +12,8 @@ export const Search = () => {
 
     dotenv.config();*/
     /*const movieLongAPIKey = process.env.REACT_APP_MOVIE_DB_KEY; // DOESNT WORK*/
-    const movieLongAPIKey = REACT_APP_MOVIE_DB_KEY;
     const [searchParams, setSearchParams] = useSearchParams();
     const searchData = searchParams.get("query");
-    const searchPage = searchParams.get("page") ?? 1;
     const [moviesData, setMoviesData] = useState([]);
 
     const options = {
@@ -29,7 +26,6 @@ export const Search = () => {
 
     const query = searchData ? `&query=${searchData}` : '';
 
-    //https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1
     const link = `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1${query}`;
     console.log(link);
     useMemo(() => fetch(link, options)
