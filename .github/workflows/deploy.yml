@@ -41,8 +41,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          REACT_APP_APIKey: ${{ secrets.REACT_APP_APIKey }}
-          REACT_APP_APISecret: ${{ secrets.REACT_APP_APISecret }}
+          REACT_APP_APIKey: ${{ secrets.REACT_APP_TMDB_KEY }}
+          REACT_APP_APISecret: ${{ secrets.REACT_APP_TMDB_READ_TOKEN }}
       - name: Copy index.html to 404.html
         run: cp ./build/index.html ./build/404.html
       - name: Setup Pages
