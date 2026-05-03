@@ -22,7 +22,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d build",
     "dev": "react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -52,6 +52,7 @@
     "@types/node": "^14.14.28",
     "crypto-browserify": "^3.12.1",
     "customize-cra": "^1.0.0",
+    "gh-pages": "^6.3.0",
     "react-scripts": "^5.0.1"
   }
 }
